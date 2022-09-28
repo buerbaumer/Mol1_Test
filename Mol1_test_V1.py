@@ -28,7 +28,7 @@ def CIRconvert(ids):
         return 'Did not work'
     
 def render_mol(xyz):
-    xyzview = py3Dmol.view()#(width=400,height=400)
+    xyzview = py3Dmol.view()#(width=600,height=400)
     xyzview.addModel(xyz,'mol')
     # xyzview.setStyle({style_choosen: {'radius': 0.1}, 'sphere': {'scale': 0.25}})
     xyzview.setStyle({style_choosen: {}})
