@@ -7,7 +7,7 @@ import py3Dmol
 from rdkit import Chem
 from rdkit.Chem import AllChem
 
-st.title('Analyser for Molecules (AfM)')
+st.title('Analyser for Chemical Structures (AfCS)')
 st.write('using py3Dmol, stmol, rdkit and streamlit')
 
 def makeblock(smi):
