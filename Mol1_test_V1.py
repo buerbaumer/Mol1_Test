@@ -59,7 +59,7 @@ spin = st.sidebar.checkbox('Spin', value = True)
 
 # st.write(display_on)
 
-if compound_smiles[0:4] != "Sorry":
+if "Sorry" not in compound_smiles:
     blk=makeblock(compound_smiles)
     render_mol(blk)
 
