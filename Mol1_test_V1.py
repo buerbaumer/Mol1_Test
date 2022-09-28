@@ -1,6 +1,8 @@
 import streamlit as st
 from stmol import showmol
 import py3Dmol
+from urllib.request import urlopen
+from urllib.parse import quote
 
 # demo only
 
@@ -17,6 +19,14 @@ def makeblock(smi):
     mblock = Chem.MolToMolBlock(mol)
     return mblock
 
+def CIRconvert(ids):
+    try:
+        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
+        ans = urlopen(url).read().decode('utf8')
+        return ans
+    except:
+        return 'Did not work'
+    
 def render_mol(xyz):
     xyzview = py3Dmol.view()#(width=400,height=400)
     xyzview.addModel(xyz,'mol')
@@ -33,7 +43,9 @@ def render_mol(xyz):
     xyzview.zoomTo()
     showmol(xyzview,height=500,width=500)
 
-compound_smiles=st.text_input('Input SMILES','COc1ccc2[nH]c([S@@+]([O-])Cc3ncc(C)c(OC)c3C)nc2c1')
+#compound_smiles = st.text_input('Input SMILES','COc1ccc2[nH]c([S@@+]([O-])Cc3ncc(C)c(OC)c3C)nc2c1')
+compound_input = st.text_input('Input the name of chemical structure: ',['3-Methylheptane', 'Aspirin', 'Diethylsulfate', 'Diethyl sulfate', '50-78-2', 'Adamant'])
+compound_smiles = CIRconvert(compound_input)
 
 style_choosen = st.sidebar.selectbox('style',['stick','sphere','cartoon','clicksphere', 'line'])
 spin = st.sidebar.checkbox('Spin', value = True)
