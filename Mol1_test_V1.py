@@ -21,7 +21,7 @@ def render_mol(xyz):
     xyzview.addModel(xyz,'mol')
     # xyzview.setStyle({'stick':{}})
     # xyzview.setStyle({'stick': {'radius': 0.1}, 'sphere': {'scale': 0.25}})
-    xyzview.setStyle({style_choosen:{}})
+    xyzview.setStyle({style_choosen: {'radius': 0.1}, 'sphere': {'scale': 0.25}})
     # xyzview.setStyle({'model': -1}, {"cartoon": {'color': 'spectrum'}})
     xyzview.setBackgroundColor('white')
     
@@ -35,7 +35,7 @@ def render_mol(xyz):
 
 compound_smiles=st.text_input('Input SMILES','COc1ccc2[nH]c([S@@+]([O-])Cc3ncc(C)c(OC)c3C)nc2c1')
 
-style_choosen = st.sidebar.selectbox('style',['line','cross','stick','sphere','cartoon','clicksphere'])
+style_choosen = st.sidebar.selectbox('style',['line','stick','sphere','cartoon','clicksphere'])
 spin = st.sidebar.checkbox('Spin', value = False)
 
 blk=makeblock(compound_smiles)
