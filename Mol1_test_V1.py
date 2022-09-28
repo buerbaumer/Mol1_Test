@@ -36,7 +36,7 @@ def render_mol(xyz):
 compound_smiles=st.text_input('Input SMILES','COc1ccc2[nH]c([S@@+]([O-])Cc3ncc(C)c(OC)c3C)nc2c1')
 
 style_choosen = st.sidebar.selectbox('style',['line','stick','sphere','cartoon','clicksphere'])
-spin = st.sidebar.checkbox('Spin', value = False)
+spin = st.sidebar.checkbox('Spin', value = True)
 
 blk=makeblock(compound_smiles)
 render_mol(blk)
