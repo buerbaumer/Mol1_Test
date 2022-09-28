@@ -21,7 +21,7 @@ def render_mol(xyz):
     xyzview.addModel(xyz,'mol')
     # xyzview.setStyle({'stick':{}})
     # xyzview.setStyle({'stick': {'radius': 0.1}, 'sphere': {'scale': 0.25}})
-    xyzview.setStyle({'style_choosen':{}})
+    xyzview.setStyle({style_choosen:{}})
     # xyzview.setStyle({'model': -1}, {"cartoon": {'color': 'spectrum'}})
     xyzview.setBackgroundColor('white')
     
