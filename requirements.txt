@@ -2,4 +2,5 @@ rdkit-pypi
 Pillow
 py3Dmol
 stmol
-urllib
+urllib.request
+urllib.parse
