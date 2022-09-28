@@ -9,8 +9,8 @@ from urllib.parse import quote
 from rdkit import Chem
 from rdkit.Chem import AllChem
 
-st.title('Analyser for Chemical Structures (AfCS)')
-st.write('using py3Dmol, stmol, rdkit and streamlit')
+st.title('Analyser for Chemical Structures (ACS)')
+st.write('using py3Dmol, stmol, rdkit, streamlit and data from the National Cancer Institute (https://www.cancer.gov/) ')
 
 def makeblock(smi):
     mol = Chem.MolFromSmiles(smi)
@@ -44,14 +44,17 @@ def render_mol(xyz):
     showmol(xyzview,height=500,width=500)
 
 #compound_smiles = st.text_input('Input SMILES','COc1ccc2[nH]c([S@@+]([O-])Cc3ncc(C)c(OC)c3C)nc2c1')
-compound_input = st.sidebar.selectbox('Input the name of chemical structure: ',['3-Methylheptane', 'Aspirin', 'Diethylsulfate', 'Diethyl sulfate', '50-78-2', 'Adamant'])
+#compound_input = st.sidebar.selectbox('Input the name of chemical structure: ',['3-Methylheptane', 'Aspirin', 'Diethylsulfate', 'Diethyl sulfate', '50-78-2', 'Adamant'])
+compound_smiles = st.text_input('Input the name of chemical structure:','Aspirin')
 compound_smiles = CIRconvert(compound_input)
+st.write(compound_smiles)
 
 style_choosen = st.sidebar.selectbox('style',['stick','sphere','cartoon','clicksphere', 'line'])
 spin = st.sidebar.checkbox('Spin', value = True)
 
 blk=makeblock(compound_smiles)
 render_mol(blk)
+
 
 # ---------------------------------------
 # import py3Dmol
