@@ -7,7 +7,8 @@ import py3Dmol
 from rdkit import Chem
 from rdkit.Chem import AllChem
 
-st.title('RDKit + Py3DMOL')
+st.title('Analyser for Molecules (AfM)')
+st.write('using py3Dmol, stmol, rdkit and streamlit')
 
 def makeblock(smi):
     mol = Chem.MolFromSmiles(smi)
@@ -19,9 +20,8 @@ def makeblock(smi):
 def render_mol(xyz):
     xyzview = py3Dmol.view()#(width=400,height=400)
     xyzview.addModel(xyz,'mol')
-    # xyzview.setStyle({'stick':{}})
-    # xyzview.setStyle({'stick': {'radius': 0.1}, 'sphere': {'scale': 0.25}})
-    xyzview.setStyle({style_choosen: {'radius': 0.1}, 'sphere': {'scale': 0.25}})
+    # xyzview.setStyle({style_choosen: {'radius': 0.1}, 'sphere': {'scale': 0.25}})
+    xyzview.setStyle({style_choosen: {}})
     # xyzview.setStyle({'model': -1}, {"cartoon": {'color': 'spectrum'}})
     xyzview.setBackgroundColor('white')
     
