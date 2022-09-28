@@ -24,16 +24,25 @@ def render_mol(xyz):
     xyzview.setStyle({'stick': {'radius': 1}, 'sphere': {'scale': 1}})
     # xyzview.setStyle({'model': -1}, {"cartoon": {'color': 'spectrum'}})
     xyzview.setBackgroundColor('white')
+    
+    if spin:
+        xyzview.spin(True)
+    else:
+        xyzview.spin(False)
+        
     xyzview.zoomTo()
-    xyzview.rotate(45, {x:1,y:1,z:1})
     showmol(xyzview,height=500,width=500)
 
 compound_smiles=st.text_input('Input SMILES','COc1ccc2[nH]c([S@@+]([O-])Cc3ncc(C)c(OC)c3C)nc2c1')
+
+style = st.sidebar.selectbox('style',['line','cross','stick','sphere','cartoon','clicksphere'])
+spin = st.sidebar.checkbox('Spin', value = False)
+
 blk=makeblock(compound_smiles)
 render_mol(blk)
 
 # ---------------------------------------
 # import py3Dmol
-view = py3Dmol.view(query='pdb:121P')
-view.setStyle({'cartoon':{'color':'spectrum'}})
-view
+#view = py3Dmol.view(query='pdb:121P')
+#view.setStyle({'cartoon':{'color':'spectrum'}})
+#view
