@@ -31,6 +31,6 @@ render_mol(blk)
 
 # ---------------------------------------
 # import py3Dmol
-view = py3Dmol.view(query='pdb:1hvr')
+view = py3Dmol.view(query='pdb:121P')
 view.setStyle({'cartoon':{'color':'spectrum'}})
 view
