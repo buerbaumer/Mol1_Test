@@ -9,6 +9,8 @@ from urllib.parse import quote
 from rdkit import Chem
 from rdkit.Chem import AllChem
 
+display_on = False
+
 st.title('Analyser for Chemical Structures (ACS)')
 st.write('using py3Dmol, stmol, rdkit, streamlit and data from the National Cancer Institute (https://www.cancer.gov/) ')
 
