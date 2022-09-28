@@ -19,7 +19,8 @@ def makeblock(smi):
 def render_mol(xyz):
     xyzview = py3Dmol.view()#(width=400,height=400)
     xyzview.addModel(xyz,'mol')
-    xyzview.setStyle({'stick':{}})
+    # xyzview.setStyle({'stick':{}})
+    xyzview.setStyle({'model': -1}, {"cartoon": {'color': 'spectrum'}})
     xyzview.setBackgroundColor('white')
     xyzview.zoomTo()
     showmol(xyzview,height=500,width=500)
