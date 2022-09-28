@@ -19,8 +19,8 @@ def makeblock(smi):
 def render_mol(xyz):
     xyzview = py3Dmol.view()#(width=400,height=400)
     xyzview.addModel(xyz,'mol')
-    # xyzview.setStyle({'stick':{}})
-    xyzview.setStyle({'model': -1}, {"cartoon": {'color': 'spectrum'}})
+    xyzview.setStyle({'stick':{}})
+    # xyzview.setStyle({'model': -1}, {"cartoon": {'color': 'spectrum'}})
     xyzview.setBackgroundColor('white')
     xyzview.zoomTo()
     showmol(xyzview,height=500,width=500)
@@ -28,3 +28,9 @@ def render_mol(xyz):
 compound_smiles=st.text_input('Input SMILES','COc1ccc2[nH]c([S@@+]([O-])Cc3ncc(C)c(OC)c3C)nc2c1')
 blk=makeblock(compound_smiles)
 render_mol(blk)
+
+# ---------------------------------------
+# import py3Dmol
+view = py3Dmol.view(query='pdb:1hvr')
+view.setStyle({'cartoon':{'color':'spectrum'}})
+view
