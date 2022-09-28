@@ -12,8 +12,6 @@ from rdkit.Chem import AllChem
 st.title('Analyser for Chemical Structures (ACS)')
 st.write('using py3Dmol, stmol, rdkit, streamlit and data from the National Cancer Institute (https://www.cancer.gov/) ')
 
-display_on = True
-
 def makeblock(smi):
     mol = Chem.MolFromSmiles(smi)
     mol = Chem.AddHs(mol)
@@ -25,10 +23,12 @@ def CIRconvert(ids):
     try:
         url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
         ans = urlopen(url).read().decode('utf8')
+        display_on = True
         return ans
     except:
-        return 'Sorry, this structure could not be found.'
         display_on = False
+        return 'Sorry, this structure could not be found.'
+        
     
 def render_mol(xyz):
     xyzview = py3Dmol.view()#(width=600,height=400)
