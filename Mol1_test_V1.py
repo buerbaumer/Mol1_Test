@@ -25,7 +25,8 @@ def CIRconvert(ids):
         ans = urlopen(url).read().decode('utf8')
         return ans
     except:
-        return 'Did not work'
+        return 'Sorry, this structure could not be found.'
+        display_on = False
     
 def render_mol(xyz):
     xyzview = py3Dmol.view()#(width=600,height=400)
@@ -52,8 +53,9 @@ st.write(compound_smiles)
 style_choosen = st.sidebar.selectbox('style',['stick','sphere','cartoon','clicksphere', 'line'])
 spin = st.sidebar.checkbox('Spin', value = True)
 
-blk=makeblock(compound_smiles)
-render_mol(blk)
+if display_on then
+    blk=makeblock(compound_smiles)
+    render_mol(blk)
 
 
 # ---------------------------------------
