@@ -12,6 +12,8 @@ from rdkit.Chem import AllChem
 st.title('Analyser for Chemical Structures (ACS)')
 st.write('using py3Dmol, stmol, rdkit, streamlit and data from the National Cancer Institute (https://www.cancer.gov/) ')
 
+display_on = True
+
 def makeblock(smi):
     mol = Chem.MolFromSmiles(smi)
     mol = Chem.AddHs(mol)
