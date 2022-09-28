@@ -52,9 +52,10 @@ compound_input = st.text_input('Input the name of chemical structure:','Aspirin'
 compound_smiles = CIRconvert(compound_input)
 st.write(compound_smiles)
 
+style_choosen = st.sidebar.selectbox('style',['stick','sphere','cartoon','clicksphere', 'line'])
+spin = st.sidebar.checkbox('Spin', value = True)
+
 if display_on:
-    style_choosen = st.sidebar.selectbox('style',['stick','sphere','cartoon','clicksphere', 'line'])
-    spin = st.sidebar.checkbox('Spin', value = True)
     blk=makeblock(compound_smiles)
     render_mol(blk)
 
