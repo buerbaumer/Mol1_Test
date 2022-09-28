@@ -25,6 +25,7 @@ def render_mol(xyz):
     # xyzview.setStyle({'model': -1}, {"cartoon": {'color': 'spectrum'}})
     xyzview.setBackgroundColor('white')
     xyzview.zoomTo()
+    xyzview.rotate(45, {x:1,y:1,z:1})
     showmol(xyzview,height=500,width=500)
 
 compound_smiles=st.text_input('Input SMILES','COc1ccc2[nH]c([S@@+]([O-])Cc3ncc(C)c(OC)c3C)nc2c1')
