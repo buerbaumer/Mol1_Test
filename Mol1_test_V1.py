@@ -55,6 +55,8 @@ st.write(compound_smiles)
 style_choosen = st.sidebar.selectbox('style',['stick','sphere','cartoon','clicksphere', 'line'])
 spin = st.sidebar.checkbox('Spin', value = True)
 
+st.write(display_on)
+
 if display_on:
     blk=makeblock(compound_smiles)
     render_mol(blk)
