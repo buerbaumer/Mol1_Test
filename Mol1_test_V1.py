@@ -61,7 +61,7 @@ def render_mol(xyz):
             xyzview.spin(False)
         
         xyzview.zoomTo()
-        showmol(xyzview,height=300,width=500)
+        showmol(xyzview,height=500,width=500)
 
 
 compound_smiles = CIRconvert(compound_input)
