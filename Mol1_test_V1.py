@@ -38,7 +38,8 @@ def render_mol(xyz):
     # xyzview.setStyle({style_choosen: {'radius': 0.1}, 'sphere': {'scale': 0.25}})
     xyzview.setStyle({style_choosen: {}})
     # xyzview.setStyle({'model': -1}, {"cartoon": {'color': 'spectrum'}})
-    xyzview.setBackgroundColor('white')
+    xyzview.setBackgroundColor(color_b)
+    #xyzview.setBackgroundColor('white')
     
     if spin:
         xyzview.spin(True)
@@ -56,6 +57,7 @@ st.write(compound_smiles)
 
 style_choosen = st.sidebar.selectbox('style',['stick','sphere','cartoon','clicksphere', 'line'])
 spin = st.sidebar.checkbox('Spin', value = True)
+color_b = st.color_picker('Pick Background color', '#00f900')
 
 # st.write(display_on)
 
