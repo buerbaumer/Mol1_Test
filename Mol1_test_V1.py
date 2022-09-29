@@ -24,7 +24,7 @@ st.write('using py3Dmol, stmol, rdkit, streamlit and data from the National Canc
 #compound_input = st.sidebar.selectbox('Input the name of chemical structure: ',['3-Methylheptane', 'Aspirin', 'Diethylsulfate', 'Diethyl sulfate', '50-78-2', 'Adamant'])
 compound_input = st.text_input('Input the name of chemical structure:','Aspirin')
 
-col1, col2 = st.columns([1,1])
+col1, col2 = st.columns([1,2])
 
 def makeblock(smi):
     mol = Chem.MolFromSmiles(smi)
@@ -43,7 +43,16 @@ def CIRconvert(ids):
     except:
         display_on = False
         return 'Sorry, this structure could not be found.'
-        
+ 
+def CIRconvert_Ring(idsRing):
+    try:
+        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/ringsys_count'
+        ansRing = urlopen(url).read().decode('utf8')
+        display_on = True
+        return ansRing
+    except:
+        display_on = False
+        return 'Sorry, this structure could not be found.'
     
 def render_mol(xyz):
     with col2:
@@ -60,15 +69,16 @@ def render_mol(xyz):
         else:
             xyzview.spin(False)
         
-        xyzview.zoomTo(1)
+        xyzview.zoomTo()
         showmol(xyzview, height=500, width=500)
 
-
 compound_smiles = CIRconvert(compound_input)
+compound_rings = CIRconvert_Ring(compound_input)
 
 with col1:
     #st.write("1")
     st.write(compound_smiles)
+    st.write(compound_rings)
     
 with col2:
     #st.write("2")
