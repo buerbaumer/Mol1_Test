@@ -55,9 +55,9 @@ compound_input = st.text_input('Input the name of chemical structure:','Aspirin'
 compound_smiles = CIRconvert(compound_input)
 
 col1, col2 = st.columns(2)
-co1.write("1")
-co2.write("2")
-co1.write(compound_smiles)
+co1.st.write("1")
+co2.st.write("2")
+co1.st.write(compound_smiles)
 
 style_choosen = st.sidebar.selectbox('style',['stick','sphere','cartoon','clicksphere', 'line'])
 spin = st.sidebar.checkbox('Spin', value = True)
