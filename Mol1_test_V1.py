@@ -57,7 +57,7 @@ st.write(compound_smiles)
 
 style_choosen = st.sidebar.selectbox('style',['stick','sphere','cartoon','clicksphere', 'line'])
 spin = st.sidebar.checkbox('Spin', value = True)
-color_b = st.color_picker('Pick Background color', '#00f900')
+color_b = st.sidebar.color_picker('Pick Background color', 'white')
 
 # st.write(display_on)
 
