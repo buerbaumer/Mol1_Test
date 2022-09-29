@@ -46,7 +46,7 @@ def CIRconvert(ids):
  
 def CIRconvert_Ring(idsRing):
     try:
-        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/ringsys_count'
+        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/ring_count'
         ansRing = urlopen(url).read().decode('utf8')
         display_on = True
         return ansRing
@@ -77,7 +77,10 @@ compound_rings = CIRconvert_Ring(compound_input)
 
 with col1:
     #st.write("1")
+    st.write('SMILES:')
     st.write(compound_smiles)
+    st.write('')
+    st.write('Number of Rings:')
     st.write(compound_rings)
     
 with col2:
