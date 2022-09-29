@@ -35,7 +35,8 @@ def makeblock(smi):
 
 def CIRconvert(ids):
     try:
-        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
+        # url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
+        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/Names'
         ans = urlopen(url).read().decode('utf8')
         display_on = True
         return ans
@@ -46,7 +47,7 @@ def CIRconvert(ids):
     
 def render_mol(xyz):
     with col2:
-        xyzview = py3Dmol.view()#(width=600,height=400)
+        xyzview = py3Dmol.view()#(width=300,height=300)
         xyzview.addModel(xyz,'mol')
         # xyzview.setStyle({style_choosen: {'radius': 0.1}, 'sphere': {'scale': 0.25}})
         xyzview.setStyle({style_choosen: {}})
@@ -66,11 +67,11 @@ def render_mol(xyz):
 compound_smiles = CIRconvert(compound_input)
 
 with col1:
-    st.write("1")
+    #st.write("1")
     st.write(compound_smiles)
     
 with col2:
-    st.write("2")
+    #st.write("2")
 
     if "Sorry" not in compound_smiles:
         blk=makeblock(compound_smiles)
