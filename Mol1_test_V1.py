@@ -47,7 +47,7 @@ def CIRconvert(ids):
     
 def render_mol(xyz):
     with col2:
-        xyzview = py3Dmol.view()(width=300,height=300)
+        xyzview = py3Dmol.view()#(width=300,height=300)
         xyzview.addModel(xyz,'mol')
         # xyzview.setStyle({style_choosen: {'radius': 0.1}, 'sphere': {'scale': 0.25}})
         xyzview.setStyle({style_choosen: {}})
@@ -61,7 +61,7 @@ def render_mol(xyz):
             xyzview.spin(False)
         
         xyzview.zoomTo()
-        showmol(xyzview,height=300,width=300)
+        showmol(xyzview,height=300,width=500)
 
 
 compound_smiles = CIRconvert(compound_input)
