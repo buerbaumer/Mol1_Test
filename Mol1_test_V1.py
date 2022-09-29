@@ -22,7 +22,7 @@ st.title('Analyser for Chemical Structures (ACS)')
 st.write('using py3Dmol, stmol, rdkit, streamlit and data from the National Cancer Institute (https://www.cancer.gov/) ')
 #compound_smiles = st.text_input('Input SMILES','COc1ccc2[nH]c([S@@+]([O-])Cc3ncc(C)c(OC)c3C)nc2c1')
 #compound_input = st.sidebar.selectbox('Input the name of chemical structure: ',['3-Methylheptane', 'Aspirin', 'Diethylsulfate', 'Diethyl sulfate', '50-78-2', 'Adamant'])
-compound_input = st.text_input('*Input the name of chemical structure:*','Aspirin')
+compound_input = st.text_input('Input the name of chemical structure:','Aspirin')
 
 col1, col2 = st.columns([1,4])
 
