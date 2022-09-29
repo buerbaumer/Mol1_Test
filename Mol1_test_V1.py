@@ -36,7 +36,7 @@ def makeblock(smi):
 def CIRconvert(ids):
     try:
         # url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
-        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/Names'
+        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
         ans = urlopen(url).read().decode('utf8')
         display_on = True
         return ans
