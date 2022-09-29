@@ -44,7 +44,7 @@ def CIRconvert(ids):
         display_on = False
         return 'Sorry, this structure could not be found.'
  
-def CIRconvert_Ring(idsRing):
+def CIRconvert_Ring(ids):
     try:
         url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/ring_count'
         ansRing = urlopen(url).read().decode('utf8')
