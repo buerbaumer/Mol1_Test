@@ -24,7 +24,7 @@ st.write('using py3Dmol, stmol, rdkit, streamlit and data from the National Canc
 #compound_input = st.sidebar.selectbox('Input the name of chemical structure: ',['3-Methylheptane', 'Aspirin', 'Diethylsulfate', 'Diethyl sulfate', '50-78-2', 'Adamant'])
 compound_input = st.text_input('Input the name of chemical structure:','Aspirin')
 
-col1, col2 = st.columns([1,3])
+col1, col2 = st.columns([1,4])
 
 def makeblock(smi):
     mol = Chem.MolFromSmiles(smi)
