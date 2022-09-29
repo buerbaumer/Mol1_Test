@@ -80,7 +80,7 @@ with col1:
     st.subheader('SMILES:')
     st.write(compound_smiles)
     st.write('')
-    st.caption('Number of Rings:')
+    st.subheader('Number of Rings:')
     st.write(compound_rings)
     
 with col2:
