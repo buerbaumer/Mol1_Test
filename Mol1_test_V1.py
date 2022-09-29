@@ -77,10 +77,10 @@ compound_rings = CIRconvert_Ring(compound_input)
 
 with col1:
     #st.write("1")
-    st.write('SMILES:')
+    st.subheader('SMILES:')
     st.write(compound_smiles)
     st.write('')
-    st.write('Number of Rings:')
+    st.caption('Number of Rings:')
     st.write(compound_rings)
     
 with col2:
