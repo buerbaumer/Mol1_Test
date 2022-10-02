@@ -35,20 +35,20 @@ def makeblock(smi):
     mblock = Chem.MolToMolBlock(mol)
     return mblock
 
+def calc_rings(comp_str):
+    # calc compound_rings_calc
+    for x in ans:
+        if x.isdigit() == True:
+            x_int = int(x)
+            if x_int > compound_rings_calc:
+                compound_rings_calc = x_int
+
 def CIRconvert(ids):
     try:
         # url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
         url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
         ans = urlopen(url).read().decode('utf8')
-        display_on = True
-        
-        # calc compound_rings_calc
-        for x in ans:
-            if x.isdigit() == True:
-                x_int = int(x)
-                if x_int > compound_rings_calc:
-                    compound_rings_calc = x_int
-
+        display_on = True           
         return ans
     except:
         display_on = False
