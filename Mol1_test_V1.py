@@ -96,6 +96,7 @@ with col1:
     st.markdown('**Molecular Weight:**')
     st.write(compound_mw)
     st.markdown('**Number of rings:**')
+    calc_rings(ans)
     st.write(compound_rings_calc)
     
 with col2:
