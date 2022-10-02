@@ -96,7 +96,7 @@ with col1:
     st.markdown('**Molecular Weight:**')
     st.write(compound_mw)
     st.markdown('**Number of rings:**')
-    calc_rings(ans)
+    calc_rings(compound_smiles)
     st.write(compound_rings_calc)
     
 with col2:
