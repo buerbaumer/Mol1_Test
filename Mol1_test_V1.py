@@ -45,7 +45,7 @@ def CIRconvert(ids):
         display_on = False
         return 'Sorry, this structure could not be found.'
  
-def CIRconvert_Ring(ids):
+def CIRconvert_MW(ids):
     try:
         url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/mw'
         ansRing = urlopen(url).read().decode('utf8')
@@ -74,7 +74,7 @@ def render_mol(xyz):
         showmol(xyzview, height=500, width=500)
 
 compound_smiles = CIRconvert(compound_input)
-compound_rings = CIRconvert_Ring(compound_input)
+compound_rings = CIRconvert_MW(compound_input)
 
 with col1:
     #st.write("1")
