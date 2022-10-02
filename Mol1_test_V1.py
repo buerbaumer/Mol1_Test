@@ -10,6 +10,7 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 
 display_on = False
+compound_rings_calc = 0
 
 # sidebar:
 style_choosen = st.sidebar.selectbox('style',['stick','sphere','cartoon','clicksphere', 'line'])
@@ -40,6 +41,11 @@ def CIRconvert(ids):
         url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
         ans = urlopen(url).read().decode('utf8')
         display_on = True
+        # calc compound_rings_calc
+        for x in ans:
+            if x.isdigit() > number_of_rings
+                number_of_rings = x
+            compound_rings_calc = number_of_rings
         return ans
     except:
         display_on = False
@@ -74,7 +80,7 @@ def render_mol(xyz):
         showmol(xyzview, height=500, width=500)
 
 compound_smiles = CIRconvert(compound_input)
-compound_rings = CIRconvert_MW(compound_input)
+compound_mw = CIRconvert_MW(compound_input)
 
 with col1:
     #st.write("1")
@@ -83,7 +89,9 @@ with col1:
     st.write(compound_smiles)
     st.write('')
     st.markdown('**Molecular Weight:**')
-    st.write(compound_rings)
+    st.write(compound_mw)
+    st.markdown('**Number of rings:**')
+    st.write(compound_rings_calc)
     
 with col2:
     #st.write("2")
