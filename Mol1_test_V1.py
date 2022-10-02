@@ -50,7 +50,7 @@ def CIRconvert(ids):
         url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
         ans = urlopen(url).read().decode('utf8')
         display_on = True
-        calc_rings(ans)
+        #calc_rings(ans)
         return ans
     except:
         display_on = False
