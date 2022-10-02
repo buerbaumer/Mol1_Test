@@ -42,10 +42,13 @@ def CIRconvert(ids):
         ans = urlopen(url).read().decode('utf8')
         display_on = True
         # calc compound_rings_calc
+
         for x in ans:
-            if x.isdigit() > number_of_rings
-                number_of_rings = x
-            compound_rings_calc = number_of_rings
+            if x.isdigit() == True:
+            x_int = int(x)
+            if x_int > compound_rings_calc:
+                compound_rings_calc = x_int
+
         return ans
     except:
         display_on = False
