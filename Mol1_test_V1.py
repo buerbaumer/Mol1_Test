@@ -47,7 +47,7 @@ def CIRconvert(ids):
  
 def CIRconvert_Ring(ids):
     try:
-        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/ring_count'
+        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/mw'
         ansRing = urlopen(url).read().decode('utf8')
         display_on = True
         return ansRing
@@ -82,7 +82,7 @@ with col1:
     st.markdown('**SMILES:**')
     st.write(compound_smiles)
     st.write('')
-    st.markdown('**Number of Rings:**')
+    st.markdown('**Molecular Weight:**')
     st.write(compound_rings)
     
 with col2:
