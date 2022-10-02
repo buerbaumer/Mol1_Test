@@ -41,13 +41,13 @@ def CIRconvert(ids):
         url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
         ans = urlopen(url).read().decode('utf8')
         display_on = True
+        
         # calc compound_rings_calc
-
         for x in ans:
             if x.isdigit() == True:
-            x_int = int(x)
-            if x_int > compound_rings_calc:
-                compound_rings_calc = x_int
+                x_int = int(x)
+                if x_int > compound_rings_calc:
+                    compound_rings_calc = x_int
 
         return ans
     except:
