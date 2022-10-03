@@ -99,6 +99,9 @@ with col1:
     st.write(compound_mw)
     st.markdown('**Number of rings:**')
     st.write(compound_rings)
+    st.write('')
+    st.write('')
+    protein_input = st.text_input('Input the name of chemical structure:','121P')
     
 with col2:
     #st.write("2")
@@ -111,9 +114,9 @@ with col2:
     #view.setStyle({'cartoon':{'color':'spectrum'}})
     #view
     
-    prot_str='1A2C'
+    prot_str = protein_input
     xyzview2 = py3Dmol.view(query='pdb:'+prot_str)
-    xyzview2.setStyle({'cartoon':{'color':'spectrum'}})
+    xyzview2.setStyle({style_choosen:{'color':'spectrum'}})
     xyzview2.setBackgroundColor(color_b)
     if spin:
         xyzview2.spin(True)
