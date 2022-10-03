@@ -107,10 +107,17 @@ with col2:
         blk=makeblock(compound_smiles)
         render_mol(blk)
 
-        # ---------------------------------------
-        # import py3Dmol
-    view = py3Dmol.view(query='pdb:1A2C')
-    view.setStyle({'cartoon':{'color':'spectrum'}})
-    view 
-        
-        
+    #view = py3Dmol.view(query='pdb:1A2C')
+    #view.setStyle({'cartoon':{'color':'spectrum'}})
+    #view
+    
+    prot_str='1A2C'
+    xyzview2 = py3Dmol.view(query='pdb:'+protein)
+    xyzview2.setStyle({style:{'color':'spectrum'}})
+    xyzview2.setBackgroundColor(color_b)
+    if spin:
+        xyzview2.spin(True)
+    else:
+        xyzview2.spin(False)
+    xyzview2.zoomTo()
+    showmol(xyzview2,height=500,width=800) 
