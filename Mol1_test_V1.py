@@ -10,7 +10,6 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 
 display_on = False
-compound_rings_calc = 0
 
 # sidebar:
 style_choosen = st.sidebar.selectbox('style',['stick','sphere','cartoon','clicksphere', 'line'])
@@ -36,6 +35,7 @@ def makeblock(smi):
     return mblock
 
 def calc_rings(comp_str):
+    compound_rings_calc = 0
     # calc the rings of the compound :-)
     # note: compound_rings_calc is global
     for x in comp_str:
@@ -43,7 +43,7 @@ def calc_rings(comp_str):
             x_int = int(x)
             if x_int > compound_rings_calc:
                 compound_rings_calc = x_int
-    return 1
+    return compound_rings_calc
 
 def CIRconvert(ids):
     try:
@@ -86,6 +86,7 @@ def render_mol(xyz):
 
 compound_smiles = CIRconvert(compound_input)
 compound_mw = CIRconvert_MW(compound_input)
+compound_rings = calc_rings(compound_smiles)
 
 with col1:
     #st.write("1")
@@ -96,8 +97,7 @@ with col1:
     st.markdown('**Molecular Weight:**')
     st.write(compound_mw)
     st.markdown('**Number of rings:**')
-    calc_rings(compound_smiles)
-    st.write(compound_rings_calc)
+    st.write(compound_rings)
     
 with col2:
     #st.write("2")
