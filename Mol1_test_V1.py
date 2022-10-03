@@ -109,6 +109,8 @@ with col2:
 
         # ---------------------------------------
         # import py3Dmol
-        #view = py3Dmol.view(query='pdb:121P')
-        #view.setStyle({'cartoon':{'color':'spectrum'}})
-        #view 
+    view = py3Dmol.view(query='pdb:1A2C')
+    view.setStyle({'cartoon':{'color':'spectrum'}})
+    view 
+        
+        
