@@ -31,6 +31,7 @@ def makeblock(smi):
     mol = Chem.MolFromSmiles(smi)
     mol = Chem.AddHs(mol)
     AllChem.EmbedMolecule(mol)
+    AllChem.MMFFOptimizeMolecule(mol, maxIters=200)
     mblock = Chem.MolToMolBlock(mol)
     return mblock
 
@@ -108,6 +109,6 @@ with col2:
 
         # ---------------------------------------
         # import py3Dmol
-        view = py3Dmol.view(query='pdb:121P')
-        view.setStyle({'cartoon':{'color':'spectrum'}})
-        view 
+        #view = py3Dmol.view(query='pdb:121P')
+        #view.setStyle({'cartoon':{'color':'spectrum'}})
+        #view 
