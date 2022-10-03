@@ -112,7 +112,7 @@ with col2:
     #view
     
     prot_str='1A2C'
-    xyzview2 = py3Dmol.view(query='pdb:'+protein)
+    xyzview2 = py3Dmol.view(query='pdb:'+prot_str)
     xyzview2.setStyle({style:{'color':'spectrum'}})
     xyzview2.setBackgroundColor(color_b)
     if spin:
