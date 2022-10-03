@@ -43,6 +43,7 @@ def calc_rings(comp_str):
             x_int = int(x)
             if x_int > compound_rings_calc:
                 compound_rings_calc = x_int
+    return 1
 
 def CIRconvert(ids):
     try:
@@ -50,7 +51,7 @@ def CIRconvert(ids):
         url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
         ans = urlopen(url).read().decode('utf8')
         display_on = True
-        #calc_rings(ans)
+        calc_rings(ans)
         return ans
     except:
         display_on = False
