@@ -113,7 +113,7 @@ with col2:
     
     prot_str='1A2C'
     xyzview2 = py3Dmol.view(query='pdb:'+prot_str)
-    xyzview2.setStyle({style:{'color':'spectrum'}})
+    xyzview2.setStyle({'cartoon':{'color':'spectrum'}})
     xyzview2.setBackgroundColor(color_b)
     if spin:
         xyzview2.spin(True)
