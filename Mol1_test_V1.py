@@ -106,9 +106,8 @@ with col2:
         blk=makeblock(compound_smiles)
         render_mol(blk)
 
-
-# ---------------------------------------
-# import py3Dmol
-#view = py3Dmol.view(query='pdb:121P')
-#view.setStyle({'cartoon':{'color':'spectrum'}})
-#view 
+        # ---------------------------------------
+        # import py3Dmol
+        view = py3Dmol.view(query='pdb:121P')
+        view.setStyle({'cartoon':{'color':'spectrum'}})
+        view 
