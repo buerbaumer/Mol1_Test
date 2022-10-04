@@ -73,7 +73,6 @@ def render_mol(xyz):
         xyzview.addModel(xyz,'mol')
         # xyzview.setStyle({style_choosen: {'radius': 0.1}, 'sphere': {'scale': 0.25}})
         xyzview.setStyle({style_choosen: {}})
-        # xyzview.setStyle({'model': -1}, {"cartoon": {'color': 'spectrum'}})
         xyzview.setBackgroundColor(color_b)
         #xyzview.setBackgroundColor('white')
     
@@ -123,8 +122,8 @@ with col2:
     
     prot_str = protein_input
     xyzview2 = py3Dmol.view(query='pdb:'+prot_str)
-    xyzview2.setStyle({{'cartoon';'stick'}:{'color':'spectrum'}})
-    #xyzview2.setStyle({style_choosen:{'color':'spectrum'}}
+    #xyzview2.setStyle({{'cartoon';'stick'}:{'color':'spectrum'}})
+    xyzview2.setStyle({style_choosen:{'color':'spectrum'}}
     xyzview2.setBackgroundColor(color_b)
     if spin:
         xyzview2.spin(True)
