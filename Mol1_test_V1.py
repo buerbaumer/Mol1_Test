@@ -123,8 +123,8 @@ with col2:
     
     prot_str = protein_input
     xyzview2 = py3Dmol.view(query='pdb:'+prot_str)
-    #xyzview2.setStyle({cartoon;stick:{'color':'spectrum'}})
-    xyzview2.setStyle({style_choosen:{'color':'spectrum'}}
+    xyzview2.setStyle({cartoon;stick:{'color':'spectrum'}})
+    #xyzview2.setStyle({style_choosen:{'color':'spectrum'}}
     xyzview2.setBackgroundColor(color_b)
     if spin:
         xyzview2.spin(True)
