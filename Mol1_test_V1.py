@@ -110,13 +110,21 @@ with col2:
         blk=makeblock(compound_smiles)
         render_mol(blk)
 
-    #view = py3Dmol.view(query='pdb:1A2C')
-    #view.setStyle({'cartoon':{'color':'spectrum'}})
-    #view
+    #https://3dmol.csb.pitt.edu/viewer.html?pdb=1YCR
+    #& select=chain:A
+    #& style=cartoon;stick:radius~0.1
+    #& surface=opacity:0.8;
+    # colorscheme:whiteCarbon
+    #& select=chain:B
+    #& style=cartoon;line
+    #& select=resi:19,23,26;chain:B
+    #& style=cartoon;stick
+    #& labelres=backgroundOpacity:0.8;fontSize:14
     
     prot_str = protein_input
     xyzview2 = py3Dmol.view(query='pdb:'+prot_str)
-    xyzview2.setStyle({style_choosen:{'color':'spectrum'}})
+    #xyzview2.setStyle({cartoon;stick:{'color':'spectrum'}})
+    xyzview2.setStyle({style_choosen:{'color':'spectrum'}}
     xyzview2.setBackgroundColor(color_b)
     if spin:
         xyzview2.spin(True)
