@@ -129,9 +129,9 @@ with col2:
     #M3Dview2.setStyle({style_choosen:{'color':'spectrum'}})
     
     if style_choosen == 'balls & stick':
-        M3Dview.setStyle({'stick': {'radius': 0.15}, 'sphere': {'scale': 0.25}})
+        M3Dview2.setStyle({'stick': {'radius': 0.15}, 'sphere': {'scale': 0.25}})
     else:
-        M3Dview.setStyle({style_choosen: {}})
+        M3Dview2.setStyle({style_choosen: {}})
         
     M3Dview2.setBackgroundColor(color_b)
     if spin:
