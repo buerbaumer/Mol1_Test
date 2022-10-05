@@ -69,24 +69,24 @@ def CIRconvert_MW(ids):
     
 def render_mol(M3D_input):
     with col2:
-        3Dview = py3Dmol.view()
-        3Dview.addModel(M3D_input,'mol')
+        M3Dview = py3Dmol.view()
+        M3Dview.addModel(M3D_input,'mol')
                                               
         if style_choosen == 'balls & stick':
-            3Dview.setStyle({'stick': {'radius': 0.15}, 'sphere': {'scale': 0.25}})
+            M3Dview.setStyle({'stick': {'radius': 0.15}, 'sphere': {'scale': 0.25}})
         else:
-            3Dview.setStyle({style_choosen: {}})
+            M3Dview.setStyle({style_choosen: {}})
                                               
-        3Dview.setBackgroundColor(color_b)
-        #3Dview.setBackgroundColor('white')
+        M3Dview.setBackgroundColor(color_b)
+        #M3Dview.setBackgroundColor('white')
     
         if spin:
-            3Dview.spin(True)
+            M3Dview.spin(True)
         else:
-            3Dview.spin(False)
+            M3Dview.spin(False)
         
-        3Dview.zoomTo()
-        showmol(3Dview, height=500, width=500)
+        M3Dview.zoomTo()
+        showmol(M3Dview, height=500, width=500)
 
 compound_smiles = CIRconvert(compound_input)
 compound_mw = CIRconvert_MW(compound_input)
@@ -125,13 +125,13 @@ with col2:
     #& labelres=backgroundOpacity:0.8;fontSize:14
     
     prot_str = protein_input
-    3Dview2 = py3Dmol.view(query='pdb:'+prot_str)
-    #3Dview2.setStyle({{'cartoon';'stick'}:{'color':'spectrum'}})
-    3Dview2.setStyle({style_choosen:{'color':'spectrum'}})
-    3Dview2.setBackgroundColor(color_b)
+    M3Dview2 = py3Dmol.view(query='pdb:'+prot_str)
+    #M3Dview2.setStyle({{'cartoon';'stick'}:{'color':'spectrum'}})
+    M3Dview2.setStyle({style_choosen:{'color':'spectrum'}})
+    M3Dview2.setBackgroundColor(color_b)
     if spin:
-        3Dview2.spin(True)
+        M3Dview2.spin(True)
     else:
-        3Dview2.spin(False)
-    3Dview2.zoomTo()
-    showmol(3Dview2,height=500,width=800) 
+        M3Dview2.spin(False)
+    M3Dview2.zoomTo()
+    showmol(M3Dview2,height=500,width=800) 
