@@ -126,8 +126,13 @@ with col2:
     
     prot_str = protein_input
     M3Dview2 = py3Dmol.view(query='pdb:'+prot_str)
-    #M3Dview2.setStyle({{'cartoon';'stick'}:{'color':'spectrum'}})
-    M3Dview2.setStyle({style_choosen:{'color':'spectrum'}})
+    #M3Dview2.setStyle({style_choosen:{'color':'spectrum'}})
+    
+    if style_choosen == 'balls & stick':
+        M3Dview.setStyle({'stick': {'radius': 0.15}, 'sphere': {'scale': 0.25}})
+    else:
+        M3Dview.setStyle({style_choosen: {}})
+        
     M3Dview2.setBackgroundColor(color_b)
     if spin:
         M3Dview2.spin(True)
