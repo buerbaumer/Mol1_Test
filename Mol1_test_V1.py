@@ -12,7 +12,7 @@ from rdkit.Chem import AllChem
 display_on = False
 
 # sidebar:
-style_choosen = st.sidebar.selectbox('style',['stick','balls & stick', sphere', 'cartoon', 'clicksphere', 'line'])
+style_choosen = st.sidebar.selectbox('style',['stick','balls & stick', 'sphere', 'cartoon', 'clicksphere', 'line'])
 spin = st.sidebar.checkbox('Spin', value = True)
 color_b = st.sidebar.color_picker('Pick Background color', '#ffffff')
 st.sidebar.write('The current color is', color_b)
