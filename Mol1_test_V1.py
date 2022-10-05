@@ -12,7 +12,7 @@ from rdkit.Chem import AllChem
 display_on = False
 
 # sidebar:
-style_choosen = st.sidebar.selectbox('style',['stick','sphere','cartoon','clicksphere', 'line'])
+style_choosen = st.sidebar.selectbox('style',['stick','balls & stick', sphere', 'cartoon', 'clicksphere', 'line'])
 spin = st.sidebar.checkbox('Spin', value = True)
 color_b = st.sidebar.color_picker('Pick Background color', '#ffffff')
 st.sidebar.write('The current color is', color_b)
@@ -71,8 +71,12 @@ def render_mol(xyz):
     with col2:
         xyzview = py3Dmol.view()
         xyzview.addModel(xyz,'mol')
-        # xyzview.setStyle({style_choosen: {'radius': 0.1}, 'sphere': {'scale': 0.25}})
-        xyzview.setStyle({style_choosen: {}})
+                                              
+        if style_choosen == 'balls & stick':
+            xyzview.setStyle({style_choosen: {'radius': 0.1}, 'sphere': {'scale': 0.25}})
+        else
+            xyzview.setStyle({style_choosen: {}})
+                                              
         xyzview.setBackgroundColor(color_b)
         #xyzview.setBackgroundColor('white')
     
