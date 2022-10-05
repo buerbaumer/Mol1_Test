@@ -30,7 +30,7 @@ with col1:
 
 def makeblock(smi):
     mol = Chem.MolFromSmiles(smi)
-    if add_Hs = 'True':
+    if add_Hs == 'True':
         mol = Chem.AddHs(mol)
     AllChem.EmbedMolecule(mol)
     AllChem.MMFFOptimizeMolecule(mol, maxIters=200)
