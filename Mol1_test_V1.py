@@ -67,26 +67,26 @@ def CIRconvert_MW(ids):
         display_on = False
         return 'Sorry, this structure could not be found.'
     
-def render_mol(xyz):
+def render_mol(3D_input):
     with col2:
-        xyzview = py3Dmol.view()
-        xyzview.addModel(xyz,'mol')
+        3Dview = py3Dmol.view()
+        3Dview.addModel(3D_input,'mol')
                                               
         if style_choosen == 'balls & stick':
-            xyzview.setStyle({'stick': {'radius': 0.15}, 'sphere': {'scale': 0.25}})
+            3Dview.setStyle({'stick': {'radius': 0.15}, 'sphere': {'scale': 0.25}})
         else:
-            xyzview.setStyle({style_choosen: {}})
+            3Dview.setStyle({style_choosen: {}})
                                               
-        xyzview.setBackgroundColor(color_b)
-        #xyzview.setBackgroundColor('white')
+        3Dview.setBackgroundColor(color_b)
+        #3Dview.setBackgroundColor('white')
     
         if spin:
-            xyzview.spin(True)
+            3Dview.spin(True)
         else:
-            xyzview.spin(False)
+            3Dview.spin(False)
         
-        xyzview.zoomTo()
-        showmol(xyzview, height=500, width=500)
+        3Dview.zoomTo()
+        showmol(3Dview, height=500, width=500)
 
 compound_smiles = CIRconvert(compound_input)
 compound_mw = CIRconvert_MW(compound_input)
@@ -125,13 +125,13 @@ with col2:
     #& labelres=backgroundOpacity:0.8;fontSize:14
     
     prot_str = protein_input
-    xyzview2 = py3Dmol.view(query='pdb:'+prot_str)
-    #xyzview2.setStyle({{'cartoon';'stick'}:{'color':'spectrum'}})
-    xyzview2.setStyle({style_choosen:{'color':'spectrum'}})
-    xyzview2.setBackgroundColor(color_b)
+    3Dview2 = py3Dmol.view(query='pdb:'+prot_str)
+    #3Dview2.setStyle({{'cartoon';'stick'}:{'color':'spectrum'}})
+    3Dview2.setStyle({style_choosen:{'color':'spectrum'}})
+    3Dview2.setBackgroundColor(color_b)
     if spin:
-        xyzview2.spin(True)
+        3Dview2.spin(True)
     else:
-        xyzview2.spin(False)
-    xyzview2.zoomTo()
-    showmol(xyzview2,height=500,width=800) 
+        3Dview2.spin(False)
+    3Dview2.zoomTo()
+    showmol(3Dview2,height=500,width=800) 
