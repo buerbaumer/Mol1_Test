@@ -67,10 +67,10 @@ def CIRconvert_MW(ids):
         display_on = False
         return 'Sorry, this structure could not be found.'
     
-def render_mol(3D_input):
+def render_mol(M3D_input):
     with col2:
         3Dview = py3Dmol.view()
-        3Dview.addModel(3D_input,'mol')
+        3Dview.addModel(M3D_input,'mol')
                                               
         if style_choosen == 'balls & stick':
             3Dview.setStyle({'stick': {'radius': 0.15}, 'sphere': {'scale': 0.25}})
