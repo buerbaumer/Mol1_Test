@@ -32,7 +32,7 @@ def makeblock(smi):
     mol = Chem.MolFromSmiles(smi)
     if add_Hs == 'True':
         mol = Chem.AddHs(mol)
-    else
+    else:
         mol = Chem.RemoveHs(mol)
     AllChem.EmbedMolecule(mol)
     AllChem.MMFFOptimizeMolecule(mol, maxIters=200)
