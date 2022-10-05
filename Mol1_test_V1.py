@@ -73,7 +73,7 @@ def render_mol(xyz):
         xyzview.addModel(xyz,'mol')
                                               
         if style_choosen == 'balls & stick':
-            xyzview.setStyle({style_choosen: {'radius': 0.1}, 'sphere': {'scale': 0.25}})
+            xyzview.setStyle({'stick': {'radius': 0.1}, 'sphere': {'scale': 0.25}})
         else:
             xyzview.setStyle({style_choosen: {}})
                                               
