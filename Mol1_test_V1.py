@@ -74,7 +74,7 @@ def render_mol(xyz):
                                               
         if style_choosen == 'balls & stick':
             xyzview.setStyle({style_choosen: {'radius': 0.1}, 'sphere': {'scale': 0.25}})
-        else
+        else:
             xyzview.setStyle({style_choosen: {}})
                                               
         xyzview.setBackgroundColor(color_b)
