@@ -13,6 +13,7 @@ display_on = False
 
 # sidebar:
 style_choosen = st.sidebar.selectbox('style',['stick','balls & stick', 'sphere', 'cartoon', 'clicksphere', 'line'])
+add_Hs = st.sidebar.checkbox('add Hs', value = True)
 spin = st.sidebar.checkbox('Spin', value = True)
 color_b = st.sidebar.color_picker('Pick Background color', '#ffffff')
 st.sidebar.write('The current color is', color_b)
@@ -29,7 +30,8 @@ with col1:
 
 def makeblock(smi):
     mol = Chem.MolFromSmiles(smi)
-    mol = Chem.AddHs(mol)
+    if add_Hs = 'True':
+        mol = Chem.AddHs(mol)
     AllChem.EmbedMolecule(mol)
     AllChem.MMFFOptimizeMolecule(mol, maxIters=200)
     mblock = Chem.MolToMolBlock(mol)
