@@ -31,7 +31,7 @@ with col1:
 def makeblock(smi):
     mol = Chem.MolFromSmiles(smi)
     #if add_Hs == 'True':
-    #    Chem.AddHs
+    #    mol = Chem.AddHs(mol)
     #else:
     #    mol = Chem.RemoveHs(mol)
     mol = Chem.AddHs(mol)   
