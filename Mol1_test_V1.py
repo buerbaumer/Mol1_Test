@@ -40,37 +40,37 @@ def makeblock(smi):
     mblock = Chem.MolToMolBlock(mol)
     return mblock
 
-def calc_rings(comp_str):
-    compound_rings_calc = 0
-    # calc the rings of the compound :-)
-    # note: compound_rings_calc is global
-    for x in comp_str:
-        if x.isdigit() == True:
-            x_int = int(x)
-            if x_int > compound_rings_calc:
-                compound_rings_calc = x_int
-    return compound_rings_calc
+#def calc_rings(comp_str):
+#    compound_rings_calc = 0
+#    # calc the rings of the compound :-)
+#    # note: compound_rings_calc is global
+#    for x in comp_str:
+#        if x.isdigit() == True:
+#            x_int = int(x)
+#            if x_int > compound_rings_calc:
+#                compound_rings_calc = x_int
+#    return compound_rings_calc
 
-def CIRconvert(ids):
-    try:
-        # url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
-        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
-        ans = urlopen(url).read().decode('utf8')
-        display_on = True
-        return ans
-    except:
-        display_on = False
-        return 'Sorry, this structure could not be found.'
+#def CIRconvert(ids):
+#    try:
+#        # url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
+#        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/smiles'
+#        ans = urlopen(url).read().decode('utf8')
+#        display_on = True
+#        return ans
+#    except:
+#        display_on = False
+#        return 'Sorry, this structure could not be found.'
  
-def CIRconvert_MW(ids):
-    try:
-        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/mw'
-        ansRing = urlopen(url).read().decode('utf8')
-        display_on = True
-        return ansRing
-    except:
-        display_on = False
-        return 'Sorry, this structure could not be found.'
+#def CIRconvert_MW(ids):
+#    try:
+#        url = 'http://cactus.nci.nih.gov/chemical/structure/' + quote(ids) + '/mw'
+#        ansRing = urlopen(url).read().decode('utf8')
+#        display_on = True
+#        return ansRing
+#    except:
+#        display_on = False
+#        return 'Sorry, this structure could not be found.'
     
 def render_mol(M3D_input):
     with col2:
@@ -93,30 +93,30 @@ def render_mol(M3D_input):
         M3Dview.zoomTo()
         showmol(M3Dview, height=500, width=500)
 
-compound_smiles = CIRconvert(compound_input)
-compound_mw = CIRconvert_MW(compound_input)
-compound_rings = calc_rings(compound_smiles)
+#compound_smiles = CIRconvert(compound_input)
+#compound_mw = CIRconvert_MW(compound_input)
+#compound_rings = calc_rings(compound_smiles)
 
 with col1:
-    #st.write("1")
-    st.write('')
-    st.markdown('**SMILES:**')
-    st.write(compound_smiles)
-    st.write('')
-    st.markdown('**Molecular Weight:**')
-    st.write(compound_mw)
-    st.markdown('**Number of rings:**')
-    st.write(compound_rings)
-    st.write('')
-    st.write('')
+#    #st.write("1")
+#    st.write('')
+#    st.markdown('**SMILES:**')
+#    st.write(compound_smiles)
+#    st.write('')
+#    st.markdown('**Molecular Weight:**')
+#    st.write(compound_mw)
+#    st.markdown('**Number of rings:**')
+#    st.write(compound_rings)
+#    st.write('')
+#    st.write('')
     protein_input = st.text_input('Input the name of chemical structure:','121P')
     
 with col2:
     #st.write("2")
 
-    if "Sorry" not in compound_smiles:
-        blk=makeblock(compound_smiles)
-        render_mol(blk)
+#    if "Sorry" not in compound_smiles:
+#        blk=makeblock(compound_smiles)
+#        render_mol(blk)
 
     #https://3dmol.csb.pitt.edu/viewer.html?pdb=1YCR
     #& select=chain:A
