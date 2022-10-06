@@ -137,7 +137,8 @@ with col2:
         M3Dview2.setStyle({'stick': {'radius': 0.15}, 'sphere': {'scale': 0.25}})
     else:
         M3Dview2.setStyle({style_choosen: {}})
-        
+    
+    M3Dview2.addSurface(py3Dmol.VDW,{'opacity':0.7,'color':'white'}, {'chain':'B'})
     M3Dview2.setBackgroundColor(color_b)
     if spin:
         M3Dview2.spin(True)
