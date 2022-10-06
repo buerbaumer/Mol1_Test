@@ -17,7 +17,7 @@ add_Hs = st.sidebar.checkbox('add Hs', value = True)
 spin = st.sidebar.checkbox('Spin', value = True)
 color_b = st.sidebar.color_picker('Pick Background color', '#ffffff')
 st.sidebar.write('The current color is', color_b)
-resi_val = st.slider('Resi:', 0, 130, 25)
+resi_val = st.sidebar.slider('Resi:', 1, 200, 1)
 
 # Main page:
 st.title('Analyser for Chemical Structures (ACS)')
@@ -143,7 +143,7 @@ with col2:
     M3Dview2.addSurface(py3Dmol.VDW,{'opacity':0.5,'color':'red'}, {'chain':'B'})
     M3Dview2.addSurface(py3Dmol.VDW,{'opacity':0.5,'color':'yellow'}, {'chain':'C'})
     
-    M3Dview2.addStyle({'chain':'A','resi':resi_val},{'stick':{'colorscheme':'blueCarbon'}})
+    M3Dview2.addStyle({'chain':'A','resi':resi_val},{'stick': {'radius': 0.15}, 'sphere': {'scale': 0.25}})
     
     M3Dview2.setBackgroundColor(color_b)
     if spin:
