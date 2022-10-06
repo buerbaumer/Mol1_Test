@@ -138,8 +138,8 @@ with col2:
     else:
         M3Dview2.setStyle({style_choosen: {}})
     
-    M3Dview2.addSurface(py3Dmol.VDW,{'opacity':0.5,'color':'yellow'}, {'chain':'A'})
-    M3Dview2.addSurface(py3Dmol.VDW,{'opacity':0.5,'color':'red'}, {'chain':'C'})
+    M3Dview2.addSurface(py3Dmol.VDW,{'opacity':0.5,'color':'green'}, {'chain':'A'})
+    M3Dview2.addSurface(py3Dmol.VDW,{'opacity':0.5,'color':'red'}, {'chain':'B'})
     
     M3Dview2.setBackgroundColor(color_b)
     if spin:
