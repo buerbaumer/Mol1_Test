@@ -140,6 +140,7 @@ with col2:
     
     M3Dview2.addSurface(py3Dmol.VDW,{'opacity':0.5,'color':'green'}, {'chain':'A'})
     M3Dview2.addSurface(py3Dmol.VDW,{'opacity':0.5,'color':'red'}, {'chain':'B'})
+    M3Dview2.addSurface(py3Dmol.VDW,{'opacity':0.5,'color':'yellow'}, {'chain':'C'})
     
     M3Dview2.setBackgroundColor(color_b)
     if spin:
